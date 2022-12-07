@@ -4,6 +4,8 @@ package com.gt;
 import com.gt.model.Customer;
 import com.gt.parser.AddressBookParserImpl;
 import com.gt.parser.BookParser;
+import com.gt.service.CustomerManagement;
+import com.gt.service.CustomerManagementImpl;
 import com.gt.validator.AddressBookValidator;
 import com.gt.validator.AddressBookValidatorImpl;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +24,9 @@ public class GTTechnicalAssignment {
         AddressBookValidator validator = new AddressBookValidatorImpl();
         validator.validate(customers);
         log.info("Address Book validated");
+        log.info("##################################################################");
+        CustomerManagement manager = new CustomerManagementImpl();
+        log.info("Count of Male Customer: " + manager.genderCounter("male", customers));
 
 
     }
