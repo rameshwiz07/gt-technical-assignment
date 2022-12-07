@@ -14,19 +14,24 @@ import java.util.List;
 
 @Slf4j
 public class GTTechnicalAssignment {
+
+
     public static void main(String[] args)  {
 
-
-        log.info("##################################################################");
+        String decorator = "##################################################################";
+        log.info(decorator);
         BookParser parser = new AddressBookParserImpl();
         List<Customer> customers = parser.parse("AddressBook");
         log.info("Address Book Parsed");
         AddressBookValidator validator = new AddressBookValidatorImpl();
         validator.validate(customers);
         log.info("Address Book validated");
-        log.info("##################################################################");
+        log.info(decorator);
         CustomerManagement manager = new CustomerManagementImpl();
         log.info("Count of Male Customer: " + manager.genderCounter("male", customers));
+        log.info("Oldest Customer: " + manager.findOldestCustomer(customers));
+        log.info("Age Difference:  " + manager.findAgeDifference(customers.get(0),customers.get(1)));
+        log.info(decorator);
 
 
     }

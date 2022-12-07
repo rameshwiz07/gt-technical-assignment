@@ -19,7 +19,10 @@ public class CustomerManagementImplTest {
     public void genderCounterTest(){
         Assert.assertEquals(3,manager.genderCounter("female",  customers));
         Assert.assertEquals(2,manager.genderCounter("male",  customers));
+    }
 
-
+    @Test
+    public void findOldestCustomerTest(){
+        Assert.assertEquals("Wes Jackson",manager.findOldestCustomer( customers));
     }
 }
